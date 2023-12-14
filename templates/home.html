@@ -1,0 +1,337 @@
+{% load static%} {% static "images" as baseImageUrl %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alamgir Kabir</title>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500"
+      ,
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">MAK</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" href="#showcase">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#testimonial">Testimonials</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </div>
+          <button id="theme-toggle-btn" class="rounded-circle border-0 bi-brightness-high"></button>
+        </div>
+        
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+    <div class="container">
+    <div
+      class="alert alert-success alert-dismissible fade show position-relative"
+      role="alert"
+    >
+      <strong>Hey visitor!</strong> I am currently looking for a new role as
+      full-stack developer, data scientist or machine learning engineer. if you
+      like my profile please feel free to contact me.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    </div>
+    
+<!-- Section Profile picture, cv, github, linkedin -->
+    <section id="showcase" class="section mb-5">
+      <div class="container">
+        <h1 class="text-center">
+          Data Scientist, ML Engineer & Full-stack Developer
+        </h1>
+        <p class="text-center">I am passionate on learning new technologies and solving problems. I code and model's data beautifully, and I love what I do.</p>
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
+            <a
+              class="btn btn-secondary rounded-pill btn-block"
+              href="{{cv.cvupload.url}}"
+              download="{{cv.cvupload.url}}"
+              >Download CV &nbsp;<span class="bi-download"></span
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
+            <a class="btn btn-secondary rounded-pill btn-block" href="#contact">
+              Contact me here &nbsp;<span class="bi-arrow-right"></span
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
+            <a
+              class="btn btn-secondary rounded-circle btn-block"
+              href="https://www.linkedin.com/in/agkabir/"
+              target="_blank"
+            >
+              <span class="bi-linkedin"></span
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
+            <a
+              class="btn btn-secondary rounded-circle btn-block"
+              href="https://github.com/agkabir"
+              target="_blank"
+            >
+              <span class="bi-github"></span
+            ></a>
+          </div>
+        </div>
+
+        <div
+          class="profile-pic d-flex justify-content-center align-items-center"
+        >
+          <img
+            src="{%static 'images/profile-picture.png'%}"
+            alt="Profile-picture"
+          />
+        </div>
+      </div>
+      <!-- End of Section profile -->
+    </section>
+    <!-- Section About me -->
+    <section id="about" class="section mb-5 py-5">
+      <div class="container">
+        <div class="about-text">
+          <h2 class="text-center mb-4">Hi, I'm Kabir. Nice to meet you.</h2>
+          <p>
+            An enthusiastic Data & AI engineer and Full-stack Developer with a
+            passion for leveraging my technical skills to solve challenging
+            technological problems and accelerate my learning curve for
+            professional growth. I possess excellent communication and
+            collaboration skills, thrive as a fast learner, and actively seek
+            opportunities to acquire knowledge in new technologies.
+          </p>
+          <p>
+            Throughout my professional and academic journey, I have gained
+            practical experience in diverse areas, including data extraction,
+            analysis, visualization, modeling, machine learning and full-stack
+            development. I am proficient in Python, Matlab, R, SQL, MS Power BI,
+            HTML, CSS, C#, Javascript, Typescript, React.js, Node.js, Express.js
+            and Python based data science ecosystem Pytorch, Pyspark,
+            Tensorflow, Keras, Streamlit and Jupyter Notebook.
+          </p>
+        </div>
+      </div>
+      <!-- End of Section About me -->
+    </section>
+<!-- Section Projects -->
+    <section id="projects" class="section mb-5">
+      <div class="container">
+        <div  id="project-content">
+        {{ total_projects|json_script:"json-total" }}
+        <h1 class="text-center mb-5">Recent Projects</h1>
+        <!-- Loop over Projects -->
+        {% for project in projects%}
+        <div class="row mb-2">
+          <div class="col-md-6 col-sm-12">
+            <div class="project-left">
+              <img
+                class="card"
+                src="{{project.image.url}}"
+                alt="Screenshot-demo"
+              /> 
+              {% if project.data_science %}
+               <div class="is-data-science text-center"><span>Data Science</span></div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="project-right">
+              <h2>{{project.title}}</h2>
+              <p>{{project.desc}}</p>
+              {% for tech in project.techs %}
+              <span class="badge text-bg-secondary rounded-pill"
+                >{{ tech }}</span
+              >
+              {% endfor %}
+              <div class="my-2">
+                {% if project.demo %}
+                <a href="{{project.demo}}" class="btn btn-secondary"
+                   target="_blank">View Demo</a
+                >
+                {% endif %}
+                <a href="{{project.source}}" class="btn btn-secondary" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- end of loop -->
+        </div>
+        <div class="spinner-border text-primary mt-2 not-visible" role="status" id="spinner">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="mt-3">
+            <button id="show-more" type="button" class="btn btn-secondary">Load More...</button>
+        </div>
+        <div class="alert alert-danger mt-2 not-visible" role="alert" id='alert'>
+            No more projects to load!!
+        </div>
+      </div>
+      <!-- End of Section Projects -->
+    </section>
+
+    <!-- Section Skills -->
+    <section id="skills" class="section mb-5 py-5">
+      <div class="container">
+        <h1 class="text-center mb-4">My Skills</h1>
+        <!-- Loop over skills -->
+        {% for skill in skills %}
+        <span
+          class="badge bg-secondary mb-2"
+          style="font-size: 1.15rem; padding: 0.75rem; font-weight: lighter"
+          >{{skill}}</span
+        >
+        {% endfor %}
+        <!-- end loop -->
+      </div>
+      <!-- End of Section Skills -->
+    </section>
+<!-- Section Testimonial -->
+    <section id="testimonial" class="section mb-5">
+      <div class="container">
+        <h1 class="text-center mb-4">Testimonials</h1>
+        <div
+          id="carouselExampleInterval"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            {% for testimonial in testimonials%} {% if forloop.counter == 1 %}
+            <div class="carousel-item active" data-bs-interval="10000">
+              {% else %}
+              <div class="carousel-item" data-bs-interval="10000">
+              {% endif %}
+              <p>{{testimonial.testimonial_text}}</p>
+              <p class="boss">- {{testimonial.name}}</p>
+            </div>
+            {% endfor %}
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-secondary"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-secondary"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <!-- End of Section Testimonial -->
+    </section>
+<!-- Section Contact me -->
+    <section id="contact" class="section mb-5 py-5">
+      <div class="container">
+        <h1 class="text-center mb-4">Contact Me</h1>
+        <form  class="row" action="" method="POST">
+          {% csrf_token %}
+          <div class="col-sm-12 col-md-10 col-lg-8 mx-auto">
+           <div class="mb-3">
+            <label for="yourName" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="yourName" 
+              name="yourName"
+              required
+              placeholder="John Doe"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="yourEmail" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="yourEmail" 
+              name="yourEmail"
+              required
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="yourMessage" class="form-label">Your Message</label>
+            <textarea class="form-control" id="yourMessage" name="yourMessage" maxlength="500" rows="5" required></textarea>
+          <span class="badge bg-secondary float-end" id="count_message"></span>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-secondary">Send &nbsp;<span class="bi-send"></span></button>
+          </div>
+          </div>
+        </form>
+      </div>
+      <!-- End of Section Contact me -->
+    </section>
+   
+    <footer id="sticky-footer">
+      <div class="container text-center py-4">
+        <small>Copyright &copy; 2023 | All Right Reserved</small>
+        <p class="fs-6 text-center"><span>About this website:</span> <small>Built with Python, Django, Jinja, Sqlite3, Ajax, Javascript, Bootstrap 5.0, Gmail SMTP, and hosted in Python Anywhere.</small></p>
+      </div>
+    </footer>
+    <script  src="{% static 'js/LoadMore.js'%}"></script>
+    <script  src="{% static 'js/SwitchTheme.js'%}"></script>
+    <script  src="{% static 'js/ScrollRevel.js'%}"></script>
+    <script  src="{% static 'js/ActiveNavBar.js'%}"></script>
+    <script  src="{% static 'js/TextCount.js'%}"></script>
+  </body>
+</html>
