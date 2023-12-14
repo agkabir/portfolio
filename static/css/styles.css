@@ -26,7 +26,7 @@ body {
   border-radius: 2rem;
 }
 
-.dark-theme a:hover {
+.dark-theme .nav-link:hover {
   color: #666;
 }
 
