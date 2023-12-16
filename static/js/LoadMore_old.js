@@ -17,8 +17,8 @@ function loadMoreProjects() {
       const data = response.projects;
       spinner.classList.add("not-visible");
       data.map((project) => {
-        projectContainer.innerHTML += `<div class="row mb-5">
-          <div class="col-md-6 col-sm-12 mb-3">
+        projectContainer.innerHTML += `<div class="row mb-2">
+          <div class="col-md-6 col-sm-12">
             <div class="project-left">
               <img
                 class="card"
@@ -44,8 +44,9 @@ function loadMoreProjects() {
                 )
                 .join(" ")}
               <div class="my-2">
-                <a href="${project.demo}" class="btn btn-secondary"
-                   target="_blank">View Demo</a
+                <a href="${
+                  project.demo
+                }" class="btn btn-secondary" target="_blank">View Demo</a
                 >
                 <a href="${
                   project.source

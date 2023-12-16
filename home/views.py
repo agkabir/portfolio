@@ -3,7 +3,6 @@ from .models import Project, CvUpload, Testimonial, Skill
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -25,7 +24,7 @@ def home(request):
     cv = CvUpload.objects.latest('id')
     skills = Skill.objects.all()
     testimonials = Testimonial.objects.all()
-    projects = Project.objects.all()[:2]
+    projects = Project.objects.all()[:3]
     total_projects = Project.objects.count()   
     for n, obj in enumerate(projects):
         obj.techs = obj.techs.split(',')

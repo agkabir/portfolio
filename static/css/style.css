@@ -1,3 +1,11 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   padding-top: 4rem;
   margin: 0 auto;
@@ -64,26 +72,11 @@ html {
   border-radius: 50%;
 }
 
-#testimonial p {
-  font-size: 1.1rem;
-  font-family: "Josefin Sans";
-  text-align: center;
+.project-left img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
-
-#testimonial p.boss {
-  font-size: 1rem;
-  color: #666;
-}
-
-#projects img {
-  width: 90%;
-  margin: 0;
-}
-.project-left,
-.project-right {
-  margin-bottom: 1rem;
-}
-
 #theme-toggle-btn:hover,
 .card:hover {
   transform: scale(1.1);
@@ -94,13 +87,28 @@ html {
 .not-visible {
   display: none;
 }
-
+.not-visible {
+  display: none;
+}
 .is-data-science {
+  float: left;
   position: relative;
-  margin: -20% auto 0 auto;
+  left: 200px;
+  margin-top: -20%;
   width: 6.5rem;
   color: #000;
   background: rgba(0, 255, 0, 0.7);
+}
+
+#testimonial p {
+  font-size: 1.1rem;
+  font-family: "Josefin Sans";
+  text-align: center;
+}
+
+#testimonial p.boss {
+  font-size: 1rem;
+  color: #666;
 }
 textarea {
   resize: none;
