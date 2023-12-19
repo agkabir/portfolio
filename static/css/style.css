@@ -38,6 +38,10 @@ body {
   color: #666;
 }
 
+.dark-theme .navbar-toggler {
+  background-color: #666 !important;
+}
+
 h1,
 h2,
 h3,
@@ -80,9 +84,11 @@ html {
 #theme-toggle-btn {
   width: 24px;
 }
-#theme-toggle-btn:hover,
+#theme-toggle-btn:hover {
+  transform: scale(1.25);
+}
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .card {
   transition: transform 1s;
@@ -124,11 +130,23 @@ textarea {
 
 /* Custom styles for the collapsed state */
 @media (max-width: 767px) {
+  .light-theme .navbar-collapse {
+    background-color: #ddd;
+  }
+  .dark-theme .navbar-collapse {
+    background-color: #111;
+  }
+  .light-theme .navbar-collapse,
+  .dark-theme .navbar-collapse {
+    margin-top: 0.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0 0 0.5rem 0.5rem;
+  }
   .light-theme .nav-link.active {
-    color: #000;
+    color: #111;
   }
   .dark-theme .nav-link.active {
-    color: #ffffffef;
+    color: #bbb;
   }
   .light-theme .nav-link.active,
   .dark-theme .nav-link.active {

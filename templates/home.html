@@ -93,7 +93,7 @@
           I am passionate on learning new technologies and solving problems. I
           code and model's data beautifully, and I love what I do.
         </p>
-        <div class="row justify-content-center align-items-center text-center">
+        <div class="row justify-content-center align-items-center text-center mb-5">
           <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
             <a
               class="btn btn-secondary rounded-pill btn-block"
@@ -104,7 +104,7 @@
           </div>
           <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
             <a class="btn btn-secondary rounded-pill btn-block" href="#contact">
-              Contact me here &nbsp;<span class="bi-arrow-right"></span
+              Contact me here &nbsp;<span id="contact-arrow" class="bi bi-arrow-right"></span
             ></a>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
@@ -125,10 +125,19 @@
               <span class="bi-github"></span
             ></a>
           </div>
+          <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
+            <a
+              class="btn btn-secondary rounded-circle btn-block"
+              href="mailto:ag.kabir@gmail.com"
+              target="_blank"
+            >
+              <span class="bi-envelope-fill"></span
+            ></a>
+          </div>
         </div>
 
         <div
-          class="profile-pic d-flex justify-content-center align-items-center"
+          class="profile-pic d-flex justify-content-center align-items-center pt-4"
         >
           <img
             src="{%static 'images/profile-picture.png'%}"
@@ -160,6 +169,10 @@
             and Python based data science ecosystem Pytorch, Pyspark,
             Tensorflow, Keras, Streamlit and Jupyter Notebook.
           </p>
+          <p>I have permanent residency in Denmark. I'm married and have a 5.5-year-old 
+            son attending kindergarten, my family holds a significant place in my life and 
+            naturally becomes a priority in my free time. Additionally, I maintain my physical 
+            fitness by going to the gym 2-3 times a week.</p>
         </div>
       </div>
       <!-- End of Section About me -->
@@ -273,7 +286,7 @@
               {% else %}
               <div class="carousel-item" data-bs-interval="10000">
                 {% endif %}
-                <p>{{testimonial.testimonial_text}}</p>
+                {{testimonial.testimonial_text|safe}}
                 <p class="boss">- {{testimonial.name}}</p>
               </div>
               {% endfor %}
