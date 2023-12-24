@@ -1,3 +1,6 @@
+:root {
+  --bg-secondary: #6c757d;
+}
 *,
 ::after,
 ::before {
@@ -15,6 +18,7 @@ body {
 .light-theme {
   background-color: #fff;
 }
+
 .light-theme .nav-link.active {
   color: #fff;
   background-color: #000;
@@ -76,23 +80,26 @@ html {
   border-radius: 50%;
 }
 
-.project-left img {
+.project-left img,
+.project-right img {
   width: 100%;
   display: block;
   object-fit: cover;
+  transition: transform 1s;
 }
+
+.project-left img:hover,
+.project-right img:hover {
+  transform: scale(1.05);
+}
+
 #theme-toggle-btn {
   width: 24px;
 }
 #theme-toggle-btn:hover {
   transform: scale(1.25);
 }
-.card:hover {
-  transform: scale(1.05);
-}
-.card {
-  transition: transform 1s;
-}
+
 .not-visible {
   display: none;
 }
@@ -102,8 +109,8 @@ html {
 .is-data-science {
   float: left;
   position: relative;
-  left: 200px;
-  margin-top: -20%;
+  left: calc(50% - 3.25rem);
+  margin-top: -25%;
   width: 6.5rem;
   color: #000;
   background: rgba(0, 255, 0, 0.7);
@@ -151,5 +158,165 @@ textarea {
   .light-theme .nav-link.active,
   .dark-theme .nav-link.active {
     background-color: transparent;
+  }
+}
+
+/* experience time line */
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+}
+.timeline:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-right: 4px solid var(--bg-secondary);
+  height: 100%;
+  display: block;
+}
+
+.timeline-row {
+  padding-left: 50%;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.timeline-row .timeline-icon {
+  position: absolute;
+  left: 50%;
+  top: 0.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-left: -1.75rem;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  background-color: var(--bg-secondary);
+  text-align: center;
+  justify-items: center;
+  z-index: 10;
+}
+
+.timeline-row .timeline-content {
+  position: relative;
+  padding: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: lighter;
+}
+
+.timeline-row .timeline-content:after {
+  content: "";
+  position: absolute;
+  top: 1.75rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.light-theme .timeline-row .timeline-content,
+.light-theme .timeline-row .timeline-content:after {
+  background-color: #ddd;
+}
+
+.dark-theme .timeline-row .timeline-content,
+.dark-theme .timeline-row .timeline-content:after {
+  background-color: #111;
+}
+
+.timeline-row .timeline-content span {
+  padding: 0.5rem 0;
+  font-weight: 400;
+}
+
+.timeline-row .timeline-content .timeline-time {
+  position: absolute;
+  top: 1rem;
+  font-size: 1.25rem;
+  left: 124%;
+  width: 100%;
+  text-align: left;
+}
+
+.timeline-row:nth-child(even) .timeline-content {
+  margin-left: 2.5rem;
+  text-align: left;
+}
+.timeline-row:nth-child(even) .timeline-content:after {
+  left: -0.5rem;
+  right: initial;
+  border-bottom: 0;
+  border-left: 0;
+  transform: rotate(-135deg);
+}
+
+.timeline-row:nth-child(even) .timeline-content .timeline-time {
+  right: 124%;
+  text-align: right;
+  left: auto;
+}
+
+.timeline-row:nth-child(odd) {
+  padding-left: 0;
+  padding-right: 50%;
+}
+
+.timeline-row:nth-child(odd) .timeline-content {
+  margin-right: 2.5rem;
+}
+.timeline-row:nth-child(odd) .timeline-content:after {
+  right: -8px;
+  border-left: 0;
+  border-bottom: 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 767px) {
+  .timeline {
+    /* padding: 15px; */
+    padding: 0;
+    margin: 0;
+  }
+  .timeline:after {
+    /* border: 0; */
+    left: 0;
+    margin-left: 1.75rem;
+  }
+
+  .timeline .timeline-row {
+    padding: 0;
+  }
+
+  .timeline .timeline-row .timeline-content {
+    margin: 0;
+    margin-left: 4.25rem;
+  }
+
+  .timeline .timeline-row .timeline-icon {
+    top: 1rem;
+    left: 0;
+    margin-left: 0;
+  }
+
+  .timeline .timeline-row:nth-child(odd) .timeline-content:after {
+    /* display: none; */
+    left: -0.5rem;
+    right: initial;
+    border-bottom: 0;
+    border-left: 0;
+    transform: rotate(-135deg);
+  }
+
+  .timeline-row .timeline-content .timeline-time {
+    position: unset;
+    width: auto;
+    font-size: 100%;
   }
 }

@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import Project, CvUpload, Testimonial, Skill
+from .models import Project, CvUpload, Testimonial, Skill, Experience
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
@@ -24,11 +24,12 @@ def home(request):
     cv = CvUpload.objects.latest('id')
     skills = Skill.objects.all()
     testimonials = Testimonial.objects.all()
-    projects = Project.objects.all()[:3]
+    experiences = Experience.objects.all()
+    projects = Project.objects.all()[:2]
     total_projects = Project.objects.count()   
     for n, obj in enumerate(projects):
         obj.techs = obj.techs.split(',')
-    return render(request,'home.html',{'projects':projects,'total_projects':total_projects,'cv':cv, 'skills':skills, 'testimonials':testimonials})
+    return render(request,'home.html',{'projects':projects,'total_projects':total_projects,'cv':cv, 'skills':skills, 'experiences':experiences, 'testimonials':testimonials})
 
 def download(request,path):
     file_path = os.path.join(settings.MEDIA_ROOT,path)

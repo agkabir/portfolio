@@ -35,7 +35,7 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md fixed-top">
-      <div class="container">
+      <div class="container nav-container">
         <a class="navbar-brand" href="#">MAK</a>
         <button
           class="navbar-toggler"
@@ -54,10 +54,11 @@
             <a class="nav-link" href="#about">About</a>
             <a class="nav-link" href="#projects">Projects</a>
             <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#experiences">Experiences</a>
             <a class="nav-link" href="#testimonial">Testimonials</a>
             <a class="nav-link" href="#contact">Contact</a>
           </div>
-          
+
           <button
             id="theme-toggle-btn"
             class="rounded-circle border-0 bi-brightness-high"
@@ -72,7 +73,7 @@
         role="alert"
       >
         <strong>Hey visitor!</strong> I am currently looking for a new role as
-        full-stack developer, data scientist or machine learning engineer. if
+        full-stack developer, data scientist or machine learning engineer. If
         you like my profile please feel free to contact me.
         <button
           type="button"
@@ -93,7 +94,9 @@
           I am passionate on learning new technologies and solving problems. I
           code and model's data beautifully, and I love what I do.
         </p>
-        <div class="row justify-content-center align-items-center text-center mb-5">
+        <div
+          class="row justify-content-center align-items-center text-center mb-5"
+        >
           <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
             <a
               class="btn btn-secondary rounded-pill btn-block"
@@ -104,7 +107,10 @@
           </div>
           <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
             <a class="btn btn-secondary rounded-pill btn-block" href="#contact">
-              Contact me here &nbsp;<span id="contact-arrow" class="bi bi-arrow-right"></span
+              Contact me here &nbsp;<span
+                id="contact-arrow"
+                class="bi bi-arrow-right"
+              ></span
             ></a>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-auto mb-2">
@@ -169,10 +175,13 @@
             and Python based data science ecosystem Pytorch, Pyspark,
             Tensorflow, Keras, Streamlit and Jupyter Notebook.
           </p>
-          <p>I have permanent residency in Denmark. I'm married and have a 5.5-year-old 
-            son attending kindergarten, my family holds a significant place in my life and 
-            naturally becomes a priority in my free time. Additionally, I maintain my physical 
-            fitness by going to the gym 2-3 times a week.</p>
+          <p>
+            I have permanent residency in Denmark. I'm married and have a
+            5.5-year-old son attending kindergarten, my family holds a
+            significant place in my life and naturally becomes a priority in my
+            free time. Additionally, I maintain my physical fitness by going to
+            the gym 2-3 times a week.
+          </p>
         </div>
       </div>
       <!-- End of Section About me -->
@@ -182,28 +191,25 @@
       <div class="container">
         {{ total_projects|json_script:"json-total" }}
         <h1 class="text-center mb-5">Recent Projects</h1>
-        <div id="project-content">
+        <div class="row" id="project-content">
           <!-- Loop over Projects -->
           {% for project in projects%}
-          <div class="row mb-5">
-            <div class="col-md-6 col-sm-12 mb-3">
-              <div class="project-left">
+          <div class="col-md-6">
+            <div class="border-2 mb-4">
+              <div class="{% cycle 'project-left' 'project-right' %}">
                 <img
-                  class="card"
-                  src="{{project.image.url}}"
-                  alt="Screenshot-demo"
+                  src="{{ project.image.url }}"
+                  class="card-img-top rounded-2 mb-3"
+                  alt="{{ project.title }}"
                 />
                 {% if project.data_science %}
-                <div class="is-data-science text-center">
-                  <span>Data Science</span>
-                </div>
+                <span class="is-data-science text-center"> Data Science </span>
                 {% endif %}
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="project-right">
-                <h2>{{project.title}}</h2>
-                <p>{{project.desc}}</p>
+
+              <div class="card-body {% cycle 'project-left' 'project-right' %}">
+                <h4 class="card-title">{{project.title}}</h4>
+                <p class="card-text">{{project.desc}}</p>
                 {% for tech in project.techs %}
                 <span class="badge text-bg-secondary rounded-pill"
                   >{{ tech }}</span
@@ -228,6 +234,7 @@
               </div>
             </div>
           </div>
+
           {% endfor %}
           <!-- end of loop -->
         </div>
@@ -250,7 +257,6 @@
         >
           No more projects to load!!
         </div>
-        </div>
       </div>
       <!-- End of Section Projects -->
     </section>
@@ -271,6 +277,34 @@
       </div>
       <!-- End of Section Skills -->
     </section>
+    <!-- Section Experience -->
+    <section id="experiences" class="section mb-5 py-5">
+      <div class="container">
+        <h1 class="text-center mb-4">Experiences</h1>
+        <!--start time line-->
+        <div class="timeline">
+          {% for experience in experiences%}
+          <div class="timeline-row">
+            <div class="timeline-icon">
+              <i
+                class="bi {{experience.icon_name}}"
+                style="font-size: 2rem"
+              ></i>
+            </div>
+
+            <div class="timeline-content">
+              <span class="timeline-time"> {{experience.duration}} </span>
+              <span>{{experience.title}}, {{experience.company_name}}</span>
+              <div>{{experience.desc|safe}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <!--end of time line-->
+        <!-- End of Section Experience -->
+      </div>
+    </section>
+
     <!-- Section Testimonial -->
     <section id="testimonial" class="section mb-5">
       <div class="container">
@@ -285,8 +319,7 @@
             <div class="carousel-item active" data-bs-interval="10000">
               {% else %}
               <div class="carousel-item" data-bs-interval="10000">
-                {% endif %}
-                {{testimonial.testimonial_text|safe}}
+                {% endif %} {{testimonial.testimonial_text|safe}}
                 <p class="boss">- {{testimonial.name}}</p>
               </div>
               {% endfor %}
@@ -387,7 +420,7 @@
         </p>
       </div>
     </footer>
-     <script src="{% static 'js/ScrollRevel.js'%}"></script>
+    <script src="{% static 'js/ScrollRevel.js'%}"></script>
     <script src="{% static 'js/LoadMore.js'%}"></script>
     <script src="{% static 'js/SwitchTheme.js'%}"></script>
     <script src="{% static 'js/ActiveNavBar.js'%}"></script>

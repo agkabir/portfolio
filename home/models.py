@@ -10,6 +10,20 @@ class Project(models.Model):
     source = models.CharField(max_length=250)
     data_science = models.BooleanField(default=False)
 
+    def __str__(self):
+        return f"{self.title}"
+
+class Experience(models.Model):
+    title = models.CharField(max_length=100)
+    company_name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+    duration = models.CharField(max_length=100)
+    icon_name = models.CharField(max_length=50)
+    desc = models.TextField()
+
+    def __str__(self):
+        return f"{self.title} - {self.company_name}"
+
 class CvUpload(models.Model):
     title=models.CharField(max_length=50)
     cvupload = models.FileField(upload_to='media')

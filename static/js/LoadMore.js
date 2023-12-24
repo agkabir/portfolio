@@ -16,25 +16,23 @@ function loadMoreProjects() {
     success: function (response) {
       const data = response.projects;
       spinner.classList.add("not-visible");
-      data.map((project) => {
-        projectContainer.innerHTML += `<div class="row mb-5">
-          <div class="col-md-6 col-sm-12 mb-3">
-            <div class="project-left">
+      data.map((project, idx) => {
+        projectContainer.innerHTML += `<div class="col-md-6">
+            <div class="border-2 mb-4">
+              <div class="${idx % 2 == 0 ? "project-left" : "project-right"}">
               <img
-                class="card"
+                class="card-img-top rounded-2 mb-3"
                 src="${project.image}"
-                alt="Screenshot-demo"
+                alt="${project.title}"
               />${
                 project.data_science
-                  ? '<div class="is-data-science text-center"><span>Data Science</span></div>'
+                  ? '<span class="is-data-science text-center"> Data Science </span>'
                   : ""
               }
             </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="project-right">
-              <h2>${project.title}</h2>
-              <p>${project.desc}</p>
+          <div class="${idx % 2 == 0 ? "project-left" : "project-right"}">
+              <h4 class="card-title">${project.title}$</h4>
+              <p class="card-text">${project.desc}</p>
               ${project.techs
                 .map(
                   (tech) =>

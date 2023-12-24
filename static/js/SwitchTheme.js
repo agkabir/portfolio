@@ -1,8 +1,8 @@
 // Add this script to your template or a separate JavaScript file
 const toggleBtn = document.getElementById("theme-toggle-btn");
-var currentTheme = localStorage.getItem("theme") || "light";
+var currentTheme = localStorage.getItem("theme") || "dark";
 var currentThemeIcon =
-  localStorage.getItem("themeIcon") || "bi-brightness-high";
+  localStorage.getItem("themeIcon") || "bi-brightness-high-fill";
 
 setTheme(currentTheme, currentThemeIcon);
 
