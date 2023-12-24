@@ -25,7 +25,7 @@ def home(request):
     skills = Skill.objects.all()
     testimonials = Testimonial.objects.all()
     experiences = Experience.objects.all()
-    projects = Project.objects.all()[:2]
+    projects = Project.objects.all()[:4]
     total_projects = Project.objects.count()   
     for n, obj in enumerate(projects):
         obj.techs = obj.techs.split(',')

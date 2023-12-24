@@ -87,9 +87,7 @@
     <!-- Section Profile picture, cv, github, linkedin -->
     <section id="showcase" class="section mb-5">
       <div class="container">
-        <h1 class="text-center">
-          Data Scientist, ML Engineer & Full-stack Developer
-        </h1>
+        <h1 class="text-center">Data Scientist & Full-stack Developer</h1>
         <p class="text-center">
           I am passionate on learning new technologies and solving problems. I
           code and model's data beautifully, and I love what I do.
@@ -176,11 +174,13 @@
             Tensorflow, Keras, Streamlit and Jupyter Notebook.
           </p>
           <p>
-            I have permanent residency in Denmark. I'm married and have a
-            5.5-year-old son attending kindergarten, my family holds a
-            significant place in my life and naturally becomes a priority in my
-            free time. Additionally, I maintain my physical fitness by going to
-            the gym 2-3 times a week.
+            I'm married and have a 5.5-year-old son attending kindergarten, my
+            family holds a significant place in my life and naturally becomes a
+            priority in my free time. Additionally, I maintain my physical
+            fitness by going to the gym 2-3 times a week. Moreover, I enjoy
+            participating in tech events to stay updated on the latest
+            innovations, connect with like-minded individuals, and learn from
+            experts.
           </p>
         </div>
       </div>
@@ -320,7 +320,12 @@
               {% else %}
               <div class="carousel-item" data-bs-interval="10000">
                 {% endif %} {{testimonial.testimonial_text|safe}}
-                <p class="boss">- {{testimonial.name}}</p>
+                <p>
+                  <span class="boss"
+                    >- {{testimonial.name}},
+                    <em>{{testimonial.company}}</em></span
+                  >
+                </p>
               </div>
               {% endfor %}
             </div>
