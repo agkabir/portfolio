@@ -31,7 +31,7 @@ function loadMoreProjects() {
               }
             </div>
           <div class="${idx % 2 == 0 ? "project-left" : "project-right"}">
-              <h4 class="card-title">${project.title}$</h4>
+              <h4 class="card-title">${project.title}</h4>
               <p class="card-text">${project.desc}</p>
               ${project.techs
                 .map(
