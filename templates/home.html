@@ -68,6 +68,20 @@
     </nav>
     <!-- End of Navbar -->
     <div class="container">
+      {% if email_success %}
+      <div
+        class="alert alert-success alert-dismissible fade show position-relative"
+        role="alert"
+      >
+        {{ email_success }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% else %}
       <div
         class="alert alert-success alert-dismissible fade show position-relative"
         role="alert"
@@ -82,6 +96,7 @@
           aria-label="Close"
         ></button>
       </div>
+      {% endif %}
     </div>
 
     <!-- Section Profile picture, cv, github, linkedin -->

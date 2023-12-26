@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 
 # Create your views here.
 def home(request):
+    email_success = ''
     if request.method == 'POST':
         name = request.POST.get('yourName')
         email = request.POST.get('yourEmail')
@@ -17,7 +18,8 @@ def home(request):
                 'message':message,
             })
             send_mail('Mail through portfolio page',message,'sendportfolioemail@gmail.com',['ice_nsec@yahoo.com'],html_message=html)
-            return redirect('home')
+            email_success = f'Hey, {name}!! Thank you for submitting your request. Have a great time!!!'
+            #return redirect('home')
         else:
             return HttpResponse("Make sure all fields are entered and valid.")
 
@@ -29,7 +31,7 @@ def home(request):
     total_projects = Project.objects.count()   
     for n, obj in enumerate(projects):
         obj.techs = obj.techs.split(',')
-    return render(request,'home.html',{'projects':projects,'total_projects':total_projects,'cv':cv, 'skills':skills, 'experiences':experiences, 'testimonials':testimonials})
+    return render(request,'home.html',{'projects':projects,'total_projects':total_projects,'cv':cv, 'skills':skills, 'experiences':experiences, 'testimonials':testimonials, 'email_success':email_success})
 
 def download(request,path):
     file_path = os.path.join(settings.MEDIA_ROOT,path)
