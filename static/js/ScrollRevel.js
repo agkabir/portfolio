@@ -10,7 +10,7 @@ sr.reveal(".profile-pic", {
 });
 sr.reveal(".about-text", {
   duration: 2000,
-  origin: "right",
+  origin: "bottom",
   distance: "20rem",
 });
 
@@ -22,7 +22,7 @@ sr.reveal(".project-left", {
 });
 sr.reveal(".project-right", {
   duration: 2000,
-  origin: "right",
+  origin: window.innerWidth > 767 ? "right" : "left",
   distance: "20rem",
   viewFactor: 0.2,
 });

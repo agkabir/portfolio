@@ -12,6 +12,8 @@
 body {
   padding-top: 4rem;
   margin: 0 auto;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Light Theme Styles */
@@ -78,6 +80,7 @@ html {
   max-width: 600px;
   max-height: 640px;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .project-left img,
